@@ -36,8 +36,9 @@
 										<div class="mb-3">
 											<label for="slug">Slug</label>
 											<input type="text" name="slug" id="slug" class="form-control" placeholder="Slug">	
-										</div>
 										<p></p>
+									</div>
+										
 									</div>	
                                     <div class="col-md-6">
 										<div class="mb-3">
@@ -74,15 +75,24 @@
         type:'post',
         data:x.serializeArray(),
         dataType:'json',
-        success: function(response){
-			var errors =response['errors'];
+        success: function(response)
+		{
+			if(response["status"] == true)
+			{
+				$("#name").removeClass('is-invalid').siblings('p').removeClass('invalid-feedback').html("");
+				$("#slug").removeClass('is-invalid').siblings('p').removeClass('invalid-feedback').html("");
+			}
+			else{
+				var errors =response['errors'];
 			if(errors['name'])
 			{
 				$("#name").addClass('is-invalid').siblings('p').addClass('invalid-feedback').html(errors['name']);
 			}
-			else{
+			else
+			{
 				$("#name").removeClass('is-invalid').siblings('p').removeClass('invalid-feedback').html("");
 			}
+			
 
 			if(errors['slug'])
 			{
@@ -91,6 +101,8 @@
 			else{
 				$("#slug").removeClass('is-invalid').siblings('p').removeClass('invalid-feedback').html("");
 			}
+			}
+			
         }
         ,error:function(jqXHR,exception)
         {

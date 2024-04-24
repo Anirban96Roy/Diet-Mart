@@ -3,7 +3,7 @@
 				<!-- Brand Logo -->
 				<a href="#" class="brand-link">
 					<img src="{{asset('newAsset/img/AdminLTELogo.png')}}"  class="brand-image img-circle elevation-3" style="opacity: .8">
-					<span class="brand-text font-weight-light">LARAVEL SHOP</span>
+					<span class="brand-text font-weight-light">Diet-Mart</span>
 				</a>
 				<!-- Sidebar -->
 				<div class="sidebar">
