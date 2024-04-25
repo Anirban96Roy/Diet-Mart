@@ -35,6 +35,9 @@ Route::group(['prefix' => 'admin'],function(){
         Route::get('/logout',[HomeController::class,'logout'])->name('admin.logout');
         Route::get('/category/create',[CategoryController::class,'create'])->name('category.create');
         Route::post('/category',[CategoryController::class,'store'])->name('category.store');
+        Route::get('/category/{category}/edit',[CategoryController::class,'edit'])->name('category.edit');
+        Route::put('/category/{category}',[CategoryController::class,'update'])->name('category.update');
+        Route::delete('/category/{category}',[CategoryController::class,'destroy'])->name('category.delete');
 
         Route::get('/getSlug',function(Request $request)
         {

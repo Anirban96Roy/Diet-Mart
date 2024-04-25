@@ -53,17 +53,68 @@ class CategoryController extends Controller
             ]);
         }
     }
-    public function edit()
+    public function edit($categoryId,Request $request)
     {
-        
+        $category=Category::find($categoryId);
+        if(empty($category))
+        {
+            return redirect()->route('category.index');
+        }
+
+        return view('admin.category.edit',compact('category'));
     }
-    public function update()
+    public function update($categoryId,Request $request)
     {
-        
+        $category=Category::find($categoryId);
+        if(empty($category))
+        {
+            return response()->json([
+                'status'=>false,
+                'notFound'=>true,
+                'message'=>'Not found'
+            ]);
+        }
+        $validator = Validator::make($request->all(),[
+            'name' => 'required',
+            'slug' => 'required|unique:catagories,slug,'.$category->id.',id',
+        ]);
+        if($validator->passes())
+        {
+           
+            $category->name=$request->name;
+            $category->slug=$request->slug;
+            $category->status=$request->status;
+            $category->save();
+
+            $request->session()->flash('success','Category updated successfully');
+
+            return response()->json([
+                'status'=> true,
+                'massage'=> 'Category updated successfully'
+            ]);
+
+        }
+        else{
+            return response()->json([
+                'status'=> false,
+                'errors'=> $validator->errors()
+            ]);
+        } 
     }
-    public function delete()
+    public function destroy($categoryId,Request $request)
     {
-        
+        $category=Category::find($categoryId); 
+        if(empty($category))
+        {
+            return redirect()->route('category.index');
+        }
+       $category->delete();
+        $request->session()->flash('success','Category Deleted successfully');
+       return response()->json([
+        'status'=> true,
+        'message'=> 'Category Deleted successfully'
+    ]);
+
     }
 
 }
