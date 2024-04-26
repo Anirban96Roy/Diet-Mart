@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\AdminLoginController;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\ProductController;
 use Illuminate\Http\Request;
 
 /*
@@ -38,6 +39,10 @@ Route::group(['prefix' => 'admin'],function(){
         Route::get('/category/{category}/edit',[CategoryController::class,'edit'])->name('category.edit');
         Route::put('/category/{category}',[CategoryController::class,'update'])->name('category.update');
         Route::delete('/category/{category}',[CategoryController::class,'destroy'])->name('category.delete');
+
+        Route::get('/product/create',[ProductController::class,'create_product'])->name('product.create');
+        Route::POST('/product',[ProductController::class,'store'])->name('product.store');
+        Route::get('/product',[ProductController::class,'view_product'])->name('product.view');
 
         Route::get('/getSlug',function(Request $request)
         {
