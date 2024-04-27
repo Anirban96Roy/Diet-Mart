@@ -19,8 +19,9 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view(Welcome);
 });
+
 
 Route::group(['prefix' => 'admin'],function(){
     Route::group(['middleware' => 'admin.guest'],function()
@@ -28,11 +29,13 @@ Route::group(['prefix' => 'admin'],function(){
         Route::get('/login',[AdminLoginController::class,'index'])->name('admin.login');
         Route::post('/authenticate',[AdminLoginController::class,'authenticate'])->name('admin.authenticate');
 
+       
     });
     Route::group(['middleware' => 'admin.auth'],function()
-    {
+    { Route::get('/dashboard',[HomeController::class,'index'])->name('admin.dashboard'); 
+
         Route::get('/category',[CategoryController::class,'index'])->name('category.index');
-        Route::get('/dashboard',[HomeController::class,'index'])->name('admin.dashboard');
+        
         Route::get('/logout',[HomeController::class,'logout'])->name('admin.logout');
         Route::get('/category/create',[CategoryController::class,'create'])->name('category.create');
         Route::post('/category',[CategoryController::class,'store'])->name('category.store');
@@ -63,6 +66,7 @@ Route::group(['prefix' => 'admin'],function(){
         })->name('getSlug');
 
         
+        Route::post('/add_cart/{id}',[HomeController::class,'add_cart'])->name('admin.addCart'); 
 
     });
 
