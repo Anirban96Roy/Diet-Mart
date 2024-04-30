@@ -24,33 +24,84 @@
 							<div class="col-lg-4 col-6">							
 								<div class="small-box card">
 									<div class="inner">
-										<h3>150</h3>
+										<h3>{{$total_order}}</h3>
 										<p>Total Orders</p>
 									</div>
 									<div class="icon">
 										<i class="ion ion-bag"></i>
 									</div>
-									<a href="#" class="small-box-footer text-dark">More info <i class="fas fa-arrow-circle-right"></i></a>
+									<div class="icon">
+										<i class="ion ion-person-add"></i>
+									</div>
+									<a href="javascript:void(0);" class="small-box-footer">&nbsp;</a>
 								</div>
 							</div>
 							
 							<div class="col-lg-4 col-6">							
 								<div class="small-box card">
 									<div class="inner">
-										<h3>50</h3>
+										<h3>{{$total_user}}</h3>
 										<p>Total Customers</p>
 									</div>
 									<div class="icon">
 										<i class="ion ion-stats-bars"></i>
 									</div>
-									<a href="#" class="small-box-footer text-dark">More info <i class="fas fa-arrow-circle-right"></i></a>
+									<div class="icon">
+										<i class="ion ion-person-add"></i>
+									</div>
+									<a href="javascript:void(0);" class="small-box-footer">&nbsp;</a>
 								</div>
 							</div>
-							
 							<div class="col-lg-4 col-6">							
 								<div class="small-box card">
 									<div class="inner">
-										<h3>$1000</h3>
+										<h3>{{$total_product}}</h3>
+										<p>Total Products</p>
+									</div>
+									<div class="icon">
+										<i class="ion ion-stats-bars"></i>
+									</div>
+									<div class="icon">
+										<i class="ion ion-person-add"></i>
+									</div>
+									<a href="javascript:void(0);" class="small-box-footer">&nbsp;</a>
+								</div>
+							</div>
+							<div class="col-lg-4 col-6">							
+								<div class="small-box card">
+									<div class="inner">
+										<h3>{{$total_processing}}</h3>
+										<p>Order Processing</p>
+									</div>
+									<div class="icon">
+										<i class="ion ion-stats-bars"></i>
+									</div>
+									<div class="icon">
+										<i class="ion ion-person-add"></i>
+									</div>
+									<a href="javascript:void(0);" class="small-box-footer">&nbsp;</a>
+								</div>
+							</div>
+							<div class="col-lg-4 col-6">							
+								<div class="small-box card">
+									<div class="inner">
+										<h3>{{$total_delivered}}</h3>
+										<p>Order Delivered</p>
+									</div>
+									<div class="icon">
+										<i class="ion ion-stats-bars"></i>
+									</div>
+									<div class="icon">
+										<i class="ion ion-person-add"></i>
+									</div>
+									<a href="javascript:void(0);" class="small-box-footer">&nbsp;</a>
+								</div>
+							</div>
+
+							<div class="col-lg-4 col-6">							
+								<div class="small-box card">
+									<div class="inner">
+										<h3>৳{{$total_sale}}</h3>
 										<p>Total Sale</p>
 									</div>
 									<div class="icon">

@@ -29,7 +29,7 @@
                 @endif
 
               </div>
-                <form action="{{route('admin.addCart',$pro->id)}}" method="post">
+                <form action="{{route('front.addCart',$pro->id)}}" method="post">
                   @csrf
                   <div class="btn-group" role="group" aria-label="Product Options">
                     <input type="number"style="height: 40px;width:50px;" name="quantity" value="" min="1">

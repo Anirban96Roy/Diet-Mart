@@ -1,4 +1,4 @@
-<nav id="navbarScroll" class="navbar navbar-expand-lg">
+<nav id="navbarScroll" class="navbar navbar-expand-lg ">
         <div class="container">
             <a class="navbar-brand" href="#">AR</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,10 +22,16 @@
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-primary" href="{{route('admin.login')}}">Login</a>
+                        <a class="nav-link" href="{{route('front.show_cart')}}">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="{{route('account.login')}}">Login</a>
                     </li>
                     <li class="nav-item" style="margin-left: 10px;" >
-                        <a class="btn btn-success" href="">Register</a>
+                        <a class="btn btn-success" href="{{route('account.register')}}">Register</a>
+                    </li>
+                    <li class="nav-item" style="margin-left: 10px;">
+                        <a class="btn btn-primary" href="{{route('account.logout')}}">logout</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
