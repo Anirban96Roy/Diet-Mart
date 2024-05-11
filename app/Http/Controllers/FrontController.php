@@ -19,6 +19,11 @@ class FrontController extends Controller
         return view('Frontend.diet',compact('product'));
     
     }
+    public function p()
+    {
+        $product=Product::paginate(8);
+        return view('Frontend.product',compact('product'));
+    }
     public function add_cart(Request $request,$id)
     {
         if (Auth::check()) {

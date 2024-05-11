@@ -1,6 +1,12 @@
 <nav id="navbarScroll" class="navbar navbar-expand-lg ">
         <div class="container">
-            <a class="navbar-brand" href="#">AR</a>
+            <a class="navbar-brand" href="#">
+            @auth
+        {{ Auth::user()->name }}
+    @else
+        AR <!-- Default text when user is not logged in -->
+    @endauth
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

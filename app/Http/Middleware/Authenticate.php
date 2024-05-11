@@ -17,7 +17,7 @@ class Authenticate extends Middleware
  
      protected function redirectTo(Request $request): ?string
      {
-        return $request->expectJson() ? null : route('account.login');
+        return $request->expectsJson() ? null : route('account.login');
      }
      //suppose i am not loggin in but want to access something in the auth middleware then it will take us account.login
 }

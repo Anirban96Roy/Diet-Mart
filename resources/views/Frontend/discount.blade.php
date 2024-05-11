@@ -8,7 +8,7 @@
                 Celebrate the dawn of a brand new year with unbeatable discounts at Diet_mart!
                Enjoy a fabulous 30% off on everything sitewide, because we believe every start deserves something special.
               </h6>
-              <button class="btn1 mt-3">Shop Now</button>
+              <button class="btn1 mt-3" onclick="scrollToProduct()">Shop Now</button>
           </div>
         </div>
       </div>

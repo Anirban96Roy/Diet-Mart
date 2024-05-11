@@ -32,6 +32,7 @@ Route::post('/add_cart/{id}',[FrontController::class,'add_cart'])->name('front.a
 Route::get('/cash_order',[FrontController::class,'cash_order'])->name('front.cash_order');
 Route::get('/back',[FrontController::class,'back'])->name('front.back');
 Route::post('/contact', [FrontController::class, 'submitContactForm'])->name('contact.submit');
+Route::get('/discountfrontend',[FrontController::class,'p'])->name('front.discount');
 
 Route::group(['prefix' => 'account'],function()
 {

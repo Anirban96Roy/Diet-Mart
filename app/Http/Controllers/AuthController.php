@@ -11,6 +11,7 @@ class AuthController extends Controller
 {
    public function login()
    {
+    
     return view('Frontend.account.login');
 
    }
@@ -59,6 +60,7 @@ public function authenticate(Request $request)
         'password' => 'required' // Corrected typo here
     ]);
 
+   
     if ($validator->passes()) {
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
             /* $admin = Auth::guard('admin')->user();
@@ -68,6 +70,9 @@ public function authenticate(Request $request)
                 Auth::guard('admin')->logout();
                 return redirect()->route('admin.login')->with('error', 'You are not Authorized');
             } */
+
+            return redirect()->route('front.diet');
+
         } else {
            // session()->flash('error','Either email/password is incorrct. ');
             return redirect()->route('account.login') ->withInput($request->only('email'))
@@ -85,9 +90,12 @@ public function profile()
 }
 public function logout()
 {
-    Auth::logout();
-    return redirect()->route('front.diet')
-    ->with('success','Logged Out Successfully');
+    if(Auth::check()) {
+        Auth::logout();
+        return redirect()->route('front.diet')->with('success','Logged Out Successfully');
+    } else {
+        return redirect()->route('front.login')->with('error', 'You are not logged in.');
+    }
 }
 
 }
