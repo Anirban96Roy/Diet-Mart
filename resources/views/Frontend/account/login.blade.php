@@ -33,6 +33,9 @@
                         <P class="invalid-feedback">{{ $message }}</P>
                         @enderror
                     </div> 
+                    <div>
+                        <br>
+                    </div>
                    <div class="input-field">
                         <input type="password"name="password" class="form-control  @error('password') is-invalid @enderror" id="password" required="">
                         <label for="pass">Password</label>
@@ -40,12 +43,13 @@
                         <P class="invalid-feedback">{{ $message }}</P>
                         @enderror
                     </div> 
+                    <br>
                    <div class="input-field">
                         
                         <input type="submit" class="submit" value="Login">
                    </div> 
                    <div class="form-group small" >
-                    <a href="#">Forget Password?</a>
+                    <a href="{{route('front.forget')}}">Forget Password?</a>
                    </div>
                 </div>
                  <div class="text-center small">Don't have an account? <a href="{{route('account.register')}}">Sign In</a> </div>

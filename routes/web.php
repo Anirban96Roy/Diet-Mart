@@ -33,6 +33,11 @@ Route::get('/cash_order',[FrontController::class,'cash_order'])->name('front.cas
 Route::get('/back',[FrontController::class,'back'])->name('front.back');
 Route::post('/contact', [FrontController::class, 'submitContactForm'])->name('contact.submit');
 Route::get('/discountfrontend',[FrontController::class,'p'])->name('front.discount');
+Route::get('/forget',[AuthController::class,'forgetPassword'])->name('front.forget');
+Route::post('/process-forget',[AuthController::class,'processforgetPassword'])->name('front.processforget');
+Route::get('/reset-password/{token}',[AuthController::class,'resetPassword'])->name('front.resetPassword');
+Route::post('/process-reset-password',[AuthController::class,'processResetPassword'])->name('front.processResetPassword');
+
 
 Route::group(['prefix' => 'account'],function()
 {
