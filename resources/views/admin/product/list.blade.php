@@ -21,7 +21,14 @@
                         @include('admin.massage')
 						<div class="card"> 
                            
-						<div class="card-body table-responsive p-0">								
+						<div class="card-body table-responsive p-0">
+						<style>
+                    .product-image {
+                        max-width: 100px; 
+                        max-height: 100px; 
+                        object-fit: cover; 
+                    }
+                </style>								
 								<table class="table table-hover text-nowrap">
 									<thead>
 										<tr>
@@ -51,7 +58,7 @@
 											<td>{{$pro->discount_price}}</td>
 											<td>{{$pro->catagory}}</td>
 											<td>
-												<img src="/product/{{$pro->image}}">
+												<img src="/product/{{$pro->image}}" class="product-image">
 											</td>
 											
 											<td>

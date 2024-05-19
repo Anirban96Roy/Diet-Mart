@@ -1,13 +1,12 @@
 <section class="footer py-5">
       <div class="container py-5">
         <div class="row">
-          <div class="col-lg-9 m-auto text-center">
-            <h1>Join Our Secret Society</h1>
-            <input type="text" class="px-3" placeholder="Enter Your Email">
-            <button class="btn2">Submit</button>
-          </div>
-        </div>
+        <div class="col-lg-9 m-auto text-center">
+    <h1 style="border-bottom: 2px solid white; display: inline-block; padding-bottom: 5px;">Be Part of Something Unique</h1>
+</div>
 
+        </div>
+          <br>
         <div class="row">
           <div class="col-lg-11">
             <div class="row">

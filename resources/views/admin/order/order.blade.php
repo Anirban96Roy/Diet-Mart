@@ -67,7 +67,7 @@
 
 											<td>
                                              @if($order->delivery_status=='processing')
-                                                <a href="{{route('order.delivered',['id' => $order->id])}}" onclick="return confirm('Are you sure?')" class="btn btn-primary">Delivered</a>
+                                                <a href="{{route('order.delivered',['id' => $order->id, 'quantity' => $order->quantity])}}" onclick="return confirm('Are you sure?')" class="btn btn-primary">Delivered</a>
                                                
                                                 @else
 

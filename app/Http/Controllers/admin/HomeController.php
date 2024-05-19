@@ -28,13 +28,12 @@ class HomeController extends Controller
         $total_delivered=Order::where('delivery_status','=','delivered')->get()->count();
         $total_processing=Order::where('delivery_status','=','processing')->get()->count();
         return view('admin.dashboard',compact('total_product','total_order','total_user','total_sale','total_delivered','total_processing'));
-       //$admin= Auth::guard('admin')->user();
-       // echo 'welcome'.$admin->name.'<a href="'.route('admin.logout').'">Logout</a>';
+       
     }
     public function logout()
     {
        Auth::guard('admin')->logout();
-       return redirect()->route('admin.login');
+       return redirect()->route('front.diet');
     }
     
  

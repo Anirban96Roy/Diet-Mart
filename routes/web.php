@@ -39,6 +39,8 @@ Route::get('/reset-password/{token}',[AuthController::class,'resetPassword'])->n
 Route::post('/process-reset-password',[AuthController::class,'processResetPassword'])->name('front.processResetPassword');
 
 
+
+
 Route::group(['prefix' => 'account'],function()
 {
     Route::group(['middleware' => 'guest'],function()
@@ -61,7 +63,7 @@ Route::group(['prefix' => 'admin'],function(){
     Route::group(['middleware' => 'admin.guest'],function()
     {
         Route::get('/login',[AdminLoginController::class,'index'])->name('admin.login');
-        Route::post('/authenticate',[AdminLoginController::class,'authenticate'])->name('admin.authenticate');
+        Route::post('/authenticate',[AdminLoginController::class,'authenticateadmin'])->name('admin.authenticate');
        
        
     });

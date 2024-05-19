@@ -67,7 +67,7 @@
         <div>
             <h1>Proceed to Order</h1>
             <a href="{{route('front.cash_order')}}" class="btn btn-danger">Cash On Delivery</a>
-            <a href="" class="btn btn-danger">Pay Using Card</a>
+            
         </div>
     </div>
     <a href="{{route('front.back')}}" class="btn btn-danger back-button">Back</a>

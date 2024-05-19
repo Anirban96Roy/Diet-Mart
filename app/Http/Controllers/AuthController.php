@@ -66,15 +66,20 @@ public function authenticate(Request $request)
    
     if ($validator->passes()) {
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
-            /* $admin = Auth::guard('admin')->user();
-            if ($admin->role == 2) {
-                return redirect()->route('admin.dashboard');
-            } else {
-                Auth::guard('admin')->logout();
-                return redirect()->route('admin.login')->with('error', 'You are not Authorized');
-            } */
+            
+            $user = Auth::user();
+            if ($user->role == 1) {
+                // If the user is an admin
+                return redirect()->route('front.diet');// Adjust this route as needed
+            }
+            else {
+                // If the user is not an admin, show unauthorized message
+                Auth::logout();
+                return redirect()->route('account.login')
+                    ->with('error', 'You are not authorized to access this page.');
+            }
 
-            return redirect()->route('front.diet');
+        
 
         } else {
            // session()->flash('error','Either email/password is incorrct. ');

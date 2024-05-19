@@ -40,10 +40,8 @@
                         <a class="btn btn-primary" href="{{route('account.logout')}}">logout</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="px-2 search" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn0" type="submit">Search</button>
-                </form>
+                
             </div>
         </div>
+        
     </nav>

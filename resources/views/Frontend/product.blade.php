@@ -3,7 +3,7 @@
         <div class="row py-5">
           <div class="col-lg-5 m-auto text-center">
             <h1>Our Products</h1>
-            <h6 style="color: red;">Be Healty Organic Food</h6>
+            <h6 style="color: red;">Taste the Freshness of Organic Ingredients</h6>
           </div>
         </div>
         <div class="row">

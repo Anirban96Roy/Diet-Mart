@@ -10,6 +10,7 @@ use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Contact;
 use App\Pagination\Paginator;
+use Illuminate\Support\Facades\Redirect;
 
 class FrontController extends Controller
 {
@@ -28,6 +29,9 @@ class FrontController extends Controller
     {
         if (Auth::check()) {
             $user=Auth::user();
+            if ($request->quantity === null) {
+                return redirect()->back()->with('error', 'Quantity is required.');
+            }
             $product=Product::find($id);
             $cart=new Cart;
             $cart->name=$user->name;
@@ -47,7 +51,7 @@ class FrontController extends Controller
             $cart->quantity=$request->quantity;
             $cart->save();
 
-            return redirect()->back();
+            return Redirect::to('/#product');
         }
         else{
             return redirect()->route('account.login');
@@ -86,7 +90,7 @@ class FrontController extends Controller
         $userid=$user->id;
 
         $data=Cart::where('user_id','=',$userid)->get();
-         
+        
         foreach($data as $data)
         {
             $order=new order;
@@ -113,7 +117,7 @@ class FrontController extends Controller
     }
     public function submitContactForm(Request $request)
     {
-        // Validate form data
+       
         $validatedData = $request->validate([
             'full_name' => 'required|string',
             'email' => 'required|email',
@@ -122,7 +126,7 @@ class FrontController extends Controller
             'message' => 'required|string',
         ]);
 
-        // Save form data to database
+        
         $contact = new Contact();
         $contact->full_name = $request->full_name;
         $contact->email = $request->email;

@@ -24,22 +24,20 @@
                 @csrf
                 <div class="input-box">
                    
-                   <header>Login account</header>
+                   <header>Admin Login Page</header>
                    <div class="input-field">
-                        <input type="email"value="{{old('email')}}"name="email" class="input" id="email" required="" autocomplete="off">
+                        <input type="email" name="email" class="input" id="email">
                         <label for="email">Email</label> 
                     </div> 
                    <div class="input-field">
-                        <input type="password"name="password" class="input" id="password" required="">
+                        <input type="password"name="password" class="input" id="password" >
                         <label for="pass">Password</label>
                     </div> 
                    <div class="input-field">
                         
                         <input type="submit" class="submit" value="Login">
                    </div> 
-                   <div class="signin">
-                    <a href="#">Forget Password?</a>
-                   </div>
+                   
                 </div> 
             </form> 
             </div>
